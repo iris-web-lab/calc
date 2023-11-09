@@ -8,7 +8,7 @@
       }
     }
 
-    Window.onload = function {
+    Window.onload = function service() {
    if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
