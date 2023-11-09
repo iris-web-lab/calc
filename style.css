@@ -33,7 +33,7 @@ body {
       justify-content: flex-end;
       font-size: 4rem;
       padding: 0.5rem;
-      color: #212121;
+      color: white;
     }
 
     .buttons {
@@ -52,7 +52,7 @@ body {
       font-size: 2rem;
       font-weight: bold;
       border-radius: 0.5rem;
-      color: white;
+      color: #121212;
       background-color: #a8c7fa;
     }
 
