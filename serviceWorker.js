@@ -8,7 +8,7 @@ const assets = [
 
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
-    caches.open(staticPhoneStore).then(cache => {
+    caches.open(staticCalc).then(cache => {
       cache.addAll(assets)
     })
   )
