@@ -3,10 +3,12 @@
     function appendDisplay(char) {
       if (display.textContent === "0") {
         display.textContent = char;
-      } elif (char === "Del") {
-        display.textContent.length - 1;
       } else {
+       if (char === "Del") {
+        display.textContent.length - 1;
+       } else {
         display.textContent += char;
+        }     
       }
     }
 
