@@ -4,8 +4,8 @@
       if (display.textContent === "0") {
         display.textContent = char;
       } else {
-       if (char === "Del") {
-        display.textContent.length - 1;
+       if (char == "Del") {
+        display.textContent -= " ";
        } else {
         display.textContent += char;
         }     
