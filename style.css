@@ -38,12 +38,8 @@ body {
       /* white-space: nowrap; */
       display: inline-block;
       line-height: 3.75em;
+      text-align: right;
     }
-
-    #display {
-       overflow-x: auto;
-       overflow-y: auto;
-    } 
 
     .buttons {
       flex: 2;
