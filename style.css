@@ -38,6 +38,11 @@ body {
       overflow-y: auto;
     }
 
+    #display {
+       overflow-x: auto;
+       overflow-y: auto;
+    } 
+
     .buttons {
       flex: 2;
       display: grid;
