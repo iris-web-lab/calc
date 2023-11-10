@@ -34,7 +34,7 @@ body {
       font-size: 4rem;
       padding: 0.5rem;
       color: white;
-      overflow-x: auto;
+      overflow-x: scroll;
     }
 
     .buttons {
