@@ -5,7 +5,7 @@
         display.textContent = char;
       } else {
        if (char == "Del") {
-        display.textContent -= " ";
+        display.textContent = display.textContent.slice(0, -1);
        } else {
         display.textContent += char;
         }     
