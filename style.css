@@ -59,6 +59,8 @@ body {
       border-radius: 1.5rem;
       color: white;
       background-color: #004A77;
+      -webkit-user-select: none; /* Safari */
+      user-select: none; /* Standard syntax */
     }
 
     .button:hover {
@@ -71,6 +73,8 @@ body {
 
     .button.zero {
       /* grid-column: span 2; */
+      -webkit-user-select: none; /* Safari */
+      user-select: none; /* Standard syntax */
     }
 
     .button.equal {
