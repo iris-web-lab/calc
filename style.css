@@ -37,12 +37,8 @@ body {
       overflow-x: auto;
       /* white-space: nowrap; */
       display: inline-block;
+      line-height: 5rem;
     }
-
-    #display {
-       overflow-x: auto;
-       overflow-y: auto;
-    } 
 
     .buttons {
       flex: 2;
@@ -57,7 +53,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      fontfont-srem;
       font-weight: bold;
       border-radius: 1.5rem;
       color: white;
@@ -82,5 +78,4 @@ body {
     }
 
     .button.clear {
-      background-color: #f44336;
-    }
+      background-col
