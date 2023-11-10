@@ -35,8 +35,7 @@ body {
       padding: 0.5rem;
       color: white;
       overflow-x: auto;
-      overflow-y: auto;
-      white-space: nowrap;
+      /* white-space: nowrap; */
       display: inline-block;
     }
 
