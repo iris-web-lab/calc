@@ -40,6 +40,11 @@ body {
       line-height: 5rem;
     }
 
+    #display {
+       overflow-x: auto;
+       overflow-y: auto;
+    } 
+
     .buttons {
       flex: 2;
       display: grid;
@@ -53,7 +58,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      fontfont-srem;
+      font-size: 2rem;
       font-weight: bold;
       border-radius: 1.5rem;
       color: white;
@@ -78,4 +83,5 @@ body {
     }
 
     .button.clear {
-      background-col
+      background-color: #f44336;
+    }
