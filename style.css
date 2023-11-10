@@ -36,6 +36,8 @@ body {
       color: white;
       overflow-x: auto;
       overflow-y: auto;
+      white-space: nowrap;
+      display: inline-block;
     }
 
     #display {
