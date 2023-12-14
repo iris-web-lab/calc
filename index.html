@@ -1,39 +1,40 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Calculator</title>
-</head>
-<body>
-  <div class="container">
-    <div class="display" id="display">0</div>
-    <div class="buttons">
-      <div class="button clear" onclick="clearDisplay()">C</div>
-      <div class="button" onclick="appendDisplay('(')">(</div>
-      <div class="button" onclick="appendDisplay(')')">)</div>
-      <div class="button" onclick="appendDisplay('/')">/</div>
-      <div class="button" onclick="appendDisplay('7')">7</div>
-      <div class="button" onclick="appendDisplay('8')">8</div>
-      <div class="button" onclick="appendDisplay('9')">9</div>
-      <div class="button" onclick="appendDisplay('*')">*</div>
-      <div class="button" onclick="appendDisplay('4')">4</div>
-      <div class="button" onclick="appendDisplay('5')">5</div>
-      <div class="button" onclick="appendDisplay('6')">6</div>
-      <div class="button" onclick="appendDisplay('-')">-</div>
-      <div class="button" onclick="appendDisplay('1')">1</div>
-      <div class="button" onclick="appendDisplay('2')">2</div>
-      <div class="button" onclick="appendDisplay('3')">3</div>
-      <div class="button" onclick="appendDisplay('+')">+</div>
-      <div class="button clear" onclick="appendDisplay('Del')">Del</div> 
-      <div class="button zero" onclick="appendDisplay('0')">0</div>
-      <div class="button" onclick="appendDisplay('.')">.</div>
-      <div class="button equal" onclick="evaluateDisplay()">=</div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet">
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display" id="display">0</div>
+      <div class="buttons">
+        <div class="button clear" onclick="clearDisplay()">C</div>
+        <div class="button" onclick="appendDisplay('(')">(</div>
+        <div class="button" onclick="appendDisplay(')')">)</div>
+        <div class="button" onclick="appendDisplay('/')">/</div>
+        <div class="button" onclick="appendDisplay('7')">7</div>
+        <div class="button" onclick="appendDisplay('8')">8</div>
+        <div class="button" onclick="appendDisplay('9')">9</div>
+        <div class="button" onclick="appendDisplay('*')">*</div>
+        <div class="button" onclick="appendDisplay('4')">4</div>
+        <div class="button" onclick="appendDisplay('5')">5</div>
+        <div class="button" onclick="appendDisplay('6')">6</div>
+        <div class="button" onclick="appendDisplay('-')">-</div>
+        <div class="button" onclick="appendDisplay('1')">1</div>
+        <div class="button" onclick="appendDisplay('2')">2</div>
+        <div class="button" onclick="appendDisplay('3')">3</div>
+        <div class="button" onclick="appendDisplay('+')">+</div>
+        <div class="button clear" onclick="appendDisplay('Del')">Del</div>
+        <div class="button zero" onclick="appendDisplay('0')">0</div>
+        <div class="button" onclick="appendDisplay('.')">.</div>
+        <div class="button equal" onclick="evaluateDisplay()">=</div>
+      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
