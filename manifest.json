@@ -2,7 +2,7 @@
   "name": "Calculator",
   "short_name": "Calc",
   "display": "minimal-ui",
-  "start_url": "/",
+  "start_url": "/calc",
   "theme_color": "#004A77",
   "background_color": "#000",
   "icons": [
