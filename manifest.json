@@ -5,6 +5,7 @@
   "start_url": "/calc/index.html",
   "theme_color": "#004A77",
   "background_color": "#000",
+  "scope": "/calc/",
   "icons": [
     {
       "src": "icon-192.png",
