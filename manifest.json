@@ -2,7 +2,7 @@
   "name": "Calculator",
   "short_name": "Calc",
   "display": "standalone",
-  "start_url": "/calc/index.html",
+  "start_url": "/calc/app/index.html",
   "theme_color": "#004A77",
   "background_color": "#000",
   "scope": "/calc/",
