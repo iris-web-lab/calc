@@ -6,7 +6,7 @@ let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
 
-function errSetting() {
+function errorSetting() {
   counter++;
   if (counter == 5) {
     errSetting = 1;
