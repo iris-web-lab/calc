@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="/OpenSans.ttf" rel="stylesheet">
+    <link href="/OpenSans.ttf" rel="font">
     <title>Calculator</title>
   </head>
   <body>
@@ -32,7 +32,7 @@
         <div class="button clear" onclick="appendDisplay('Del')">Del</div>
         <div class="button zero" onclick="appendDisplay('0')">0</div>
         <div class="button" onclick="appendDisplay('.')">.</div>
-        <div class="button equal" onclick="evaluateDisplay()">=</div>
+        <div class="button equal" onclick="evaluateDisplay(); errSetting()">=</div>
       </div>
     </div>
     <script src="script.js"></script>
