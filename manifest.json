@@ -1,7 +1,11 @@
 {
-  "name": "Calculator",
-  "short_name": "Calc",
+  "name": "Simple Calculator",
+  "short_name": "Calculator",
   "display": "standalone",
+  "version": "1.0",
+  "version_name": "1.0 realease",
+  "categories": ["productivity", "utilities"],
+  "description": "A simple and modern calculator PWA web app.",
   "start_url": "/calc/app/index.html",
   "theme_color": "#004A77",
   "background_color": "#000",
