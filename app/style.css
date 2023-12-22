@@ -89,12 +89,12 @@
         flex-direction: row;
         height: 100dvh;
         background-color: #121212;
+        width: 100vw;
       }
       .display {
         line-height: 50dvh;
-        overflow-x: wrap;
       }
       .buttons {
-        width: 50vw;
+        width: 50%; 
       }
     }
