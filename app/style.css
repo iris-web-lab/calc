@@ -95,6 +95,6 @@
         line-height: 50dvh;
       }
       .buttons {
-        max-width: 50vw; 
+        max-width: 50%; 
       }
     }
