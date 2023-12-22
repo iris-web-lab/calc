@@ -92,7 +92,7 @@
         width: 100vw;
       }
       .display {
-        line-height: 50dvh;
+        overflow-wrap: break-word;
       }
       .buttons {
         max-width: 50%; 
