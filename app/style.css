@@ -93,6 +93,7 @@
       }
       .display {
         overflow-wrap: break-word;
+        line-height: 20dvh;
       }
       .buttons {
         max-width: 50%; 
