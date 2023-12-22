@@ -16,16 +16,6 @@
       background-color: #000000;
     }
 
-    @media only screen and (min-width: 700px) {
-      .container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 50vh;
-        background-color: #121212;
-      }
-    }
-
     .display {
       flex: 1;
       display: flex;
@@ -48,6 +38,7 @@
       grid-template-rows: repeat(5, 1fr);
       gap: 0.5rem;
       padding: 0.5rem;
+      touch-action: manipulation;
     }
 
     .button {
@@ -63,6 +54,7 @@
       /* Safari */
       user-select: none;
       /* Standard syntax */
+      touch-action: manipulation;
     }
 
     .button:hover {
@@ -88,4 +80,22 @@
 
     .button.clear {
       background-color: #f44336;
+    }
+
+
+  @media only screen and (min-width: 700px) {
+      .container {
+        display: flex;
+        flex-direction: row;
+        height: 100dvh;
+        background-color: #121212;
+        width: 100vw;
+      }
+      .display {
+        overflow-wrap: break-word;
+        line-height: 20dvh;
+      }
+      .buttons {
+        max-width: 50%; 
+      }
     }
