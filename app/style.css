@@ -28,6 +28,9 @@
         line-height: 100dvh;
         overflow-x: wrap;
       }
+      .buttons {
+        width: 50vw;
+      }
     }
 
     .display {
