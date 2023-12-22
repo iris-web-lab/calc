@@ -25,7 +25,7 @@
         background-color: #121212;
       }
       .display {
-        line-height: 100dvh;
+        line-height: 50dvh;
         overflow-x: wrap;
       }
       .buttons {
