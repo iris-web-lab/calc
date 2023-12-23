@@ -11,6 +11,8 @@ const precacheResources = [
   '/app/assets/OpenSans.ttf',
   '/favicon.ico',
   '/manifest.json',
+  '/icon-192.png',
+  '/icon-512-maskable.png'
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
