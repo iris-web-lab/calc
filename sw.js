@@ -9,8 +9,8 @@ const precacheResources = [
   '/app/script.js',
   'app/style.css',
   'app/assets/OpenSans.ttf',
-  '/favicon.ico',
-  '/manifest.json',
+ /* '/favicon.ico',
+  '/manifest.json', */
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
