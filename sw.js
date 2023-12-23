@@ -18,16 +18,10 @@ self.addEventListener('install', (event) => {
   console.log('Service worker install event!');
 
   //for (var i=0; i< precacheResources.length;i++){
-    try {
   event.waitUntil(
-    caches.open('cache-v2')
-      .then(
-        (cache) => {console.log(cache);cache.addAll(precacheResources)}
-      )
+    caches.then((cache) => {cache.addAll(precacheResources)})
   );
-      } catch (error) {
-        console.log(error);
-      }
+
   //}
 
 });
