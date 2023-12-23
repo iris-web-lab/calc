@@ -4,7 +4,7 @@ const cacheName = 'cache-v1';
 const precacheResources = [
   '/',
   '/app/',
-  '/app/assets',
+ /* '/app/assets', */
   '/app/index.html',
   '/app/script.js',
   '/app/style.css',
