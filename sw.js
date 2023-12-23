@@ -1,18 +1,31 @@
 // Choose a cache name
 const cacheName = 'cache-v1';
 // List the files to precache
-const precacheResources = ['/', '/app/', '/app/assets', '/app/index.html', '/app/script.js', 'app/style.css', 'app/assets/OpenSans.ttf'];
+const precacheResources = [
+  '/',
+  '/app/',
+  '/app/assets',
+  '/app/index.html',
+  '/app/script.js',
+  'app/style.css',
+  'app/assets/OpenSans.ttf',
+  '/favicon.ico',
+  '/manifest.json',
+  ''
+];
 
 // When the service worker is installing, open the cache and add the precache resources to it
 self.addEventListener('install', (event) => {
   console.log('Service worker install event!');
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('/')));
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('/app/')));
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('/app/assets')));
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('/app/index.html')));
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('/app/script.js')));
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.add/*All*/('app/style.css')));
 
+  //for (var i=0; i< precacheResources.length;i++){
+  event.waitUntil(
+    caches.open(cacheName)
+      .then(
+        (cache) => cache.addAll(precacheResources)
+      )
+  );
+  //}
 
 });
 
