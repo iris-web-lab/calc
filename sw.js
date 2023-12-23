@@ -19,7 +19,7 @@ self.addEventListener('install', (event) => {
 
   //for (var i=0; i< precacheResources.length;i++){
   event.waitUntil(
-    caches.open(cacheName)
+    caches.open('cache-v1')
       .then(
         (cache) => cache.addAll(precacheResources)
       )
