@@ -21,7 +21,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('cache-v1')
       .then(
-        (cache) => cache.addAll(precacheResources)
+        (cache) => {console.log(cache);cache.addAll(precacheResources)}
       )
   );
   //}
