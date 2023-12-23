@@ -25,6 +25,9 @@ const precacheResources = [
 addEventListener("install", (event) => {
   const preCache = async () => {
     const cache = await caches.open(cacheName);
+
+    console.log(precacheResources);
+
     return cache.addAll(precacheResources);
   };
   event.waitUntil(preCache());
@@ -39,12 +42,18 @@ self.addEventListener('activate', (event) => {
 // When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
 self.addEventListener('fetch', (event) => {
   console.log('Fetch intercepted for:', event.request.url);
+  console.log(event.request);
+
+
   event.respondWith(
-    caches.open('cache-v2').match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {        
         return cachedResponse;
       }
       return fetch(event.request);
+    }).catch((error) => {
+      console.log("da luki ne place");
+      
     }),
   );
 });
