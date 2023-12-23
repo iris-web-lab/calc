@@ -3,11 +3,10 @@ const cacheName = 'cache-v1';
 // List the files to precache
 const precacheResources = [
   '/',
-  '/app/',
-  '/app/index.html',
-  '/app/script.js',
-  '/app/style.css',
-  '/app/OpenSans.ttf',
+  '/index.html',
+  '/script.js',
+  '/style.css',
+  '/OpenSans-Regular.woff',
   '/favicon.ico',
   '/manifest.json',
   '/icon-192.png',
