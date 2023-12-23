@@ -52,7 +52,7 @@ self.addEventListener('fetch', (event) => {
       }
       return fetch(event.request);
     }).catch((error) => {
-      console.log("da luki ne place");
+      console.log("It seems something went wrong.");
       
     }),
   );
