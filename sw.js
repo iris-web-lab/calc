@@ -14,17 +14,23 @@ const precacheResources = [
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
-self.addEventListener('install', (event) => {
-  console.log('Service worker install event!');
+//self.addEventListener('install', (event) => {
+//  console.log('Service worker install event!');
+//  event.waitUntil(
+//    caches.then((cache) => {cache.addAll(precacheResources)})
+//  );
+//});
 
-  //for (var i=0; i< precacheResources.length;i++){
-  event.waitUntil(
-    caches.then((cache) => {cache.addAll(precacheResources)})
-  );
 
-  //}
-
+addEventListener("install", (event) => {
+  const preCache = async () => {
+    const cache = await caches.open(cacheName);
+    return cache.addAll(precacheResources);
+  };
+  event.waitUntil(preCache());
 });
+
+
 
 self.addEventListener('activate', (event) => {
   console.log('Service worker activate event!');
