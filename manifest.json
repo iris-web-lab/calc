@@ -23,4 +23,28 @@
       "purpose": "any maskable"
     }
   ]
+  "screenshots": [
+    {
+     "src": "https://i.imgur.com/Xoa7T1U.jpg",
+      "sizes": "1080x2285",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Calculator"
+    },
+    {
+     "src": "https://i.imgur.com/hYrQrDL.jpg",
+      "sizes": "1080x2285",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Calculator"
+    },
+    {
+     "src": "https://i.imgur.com/x618czZ.jpg",
+      "sizes": "1080x2285",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Calculator"
+    }
+]
+
 }
