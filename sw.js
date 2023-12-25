@@ -11,8 +11,7 @@ const precacheResources = [
   '/manifest.json',
   '/icon-192.png',
   '/icon-512-maskable.png',
-  'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200',
-  'https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2'
+  '/back.svg',
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
