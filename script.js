@@ -5,7 +5,7 @@ navigator.serviceWorker && navigator.serviceWorker.register('/sw.js').then(funct
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
-const version = 7;
+const version = 8;
 
 function errorSetting() {
   counter++;
@@ -51,20 +51,23 @@ function evaluateDisplay() {
 }
 
 function checkForUpdates() {
-  console.log("Checking for updates");
+  console.log("Checking for updates 1/2");
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
+    console.log("Checking for updates 2/2");
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
         const storedVersion = localStorage.getItem('sw-version');
         if (storedVersion !== version) {
+          console.log("Installing updates.");
           registration.update();
           localStorage.setItem('sw-version', version);
+          console.log("Updates installed.");
+        } else {
+          console.log("No updates found.");
         }
-      })
-      .catch((error) => {
-        console.error('Error registering service worker:', error);
+      }).catch((error) => {
+        console.error('Error installing update, Error registering service worker:', error);
       });
   }
 }
 
-setTimeout(checkForUpdates, 4000);
+setTimeout(checkForUpdates, 2000);
