@@ -1,5 +1,5 @@
 // Choose a cache name
-const cacheName = 'cache-v2';
+const cacheName = 'cache-v4';
 // List the files to precache
 const precacheResources = [
   '/',
@@ -42,11 +42,31 @@ self.addEventListener('activate', (event) => {
 
 // When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
 self.addEventListener('fetch', (event) => {
+  if (event.request.url.startsWith('https://www.google-analytics.com')) {
+    return;
+  }
+  if (event.request.url.startsWith('https://www.googletagmanager.com')) {
+    return;
+  }
   console.log('Fetch intercepted for:', event.request.url);
   console.log(event.request);
 
 
-  event.respondWith(
+event.respondWith(
+    caches.open(cacheName).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        return response || fetch(event.request).then(function(response) {
+
+          cache.put(event.request, response.clone());
+          return response;
+
+        });
+      });
+    })
+  );
+
+  
+/*  event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
@@ -56,5 +76,5 @@ self.addEventListener('fetch', (event) => {
       console.log("It seems something went wrong.", error);
 
     }),
-  );
+  ); */
 });
