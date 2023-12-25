@@ -5,7 +5,7 @@ navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=9').then
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
-const version = 9;
+const version = 10;
 
 function errorSetting() {
   counter++;
