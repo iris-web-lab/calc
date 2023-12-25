@@ -1,11 +1,11 @@
-navigator.serviceWorker && navigator.serviceWorker.register('./../sw.js').then(function (registration) {
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js').then(function (registration) {
   console.log('Excellent, registered with scope: ', registration.scope);
 });
 
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
-const version = 5;
+const version = 6;
 
 function errorSetting() {
   counter++;
@@ -32,17 +32,6 @@ function appendDisplay(char) {
   }
 }
 
-/*  Window.onload = function service() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
-  }
-} */
-
 function clearDisplay() {
   display.textContent = "0";
 }
@@ -62,7 +51,7 @@ function evaluateDisplay() {
 }
 
 function checkForUpdates() {
-
+  console.log("Checking for updates");
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
       .then((registration) => {
