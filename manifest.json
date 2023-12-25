@@ -7,7 +7,7 @@
   "version_name": "8 realese",
   "categories": ["productivity", "utilities"],
   "description": "A simple and modern calculator PWA web app.",
-  "start_url": "/index.html",
+  "start_url": "/index.html?ver=8",
   "theme_color": "#004A77",
   "background_color": "#000",
   "scope": "/",
