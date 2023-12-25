@@ -62,6 +62,7 @@ function evaluateDisplay() {
 }
 
 function checkForUpdates() {
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
       .then((registration) => {
@@ -77,4 +78,4 @@ function checkForUpdates() {
   }
 }
 
-checkForUpdates();
+setTimeout(checkForUpdates, 4000);
