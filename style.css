@@ -57,6 +57,11 @@
       touch-action: manipulation;
     }
 
+    .symbol{
+      fill: fff;
+      height: 2.5rem;
+    }
+
     .button:hover {
       filter: brightness(0.9);
     }
