@@ -57,6 +57,10 @@
       touch-action: manipulation;
     }
 
+    .material-symbols-outlined {
+      font-size: 2.5rem !important;
+    }
+
     .button:hover {
       filter: brightness(0.9);
     }
