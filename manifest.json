@@ -1,10 +1,10 @@
 {
   "name": "Simple Calculator",
   "short_name": "Calculator",
-  "display_override": ["fullscreen", "window-controls-overlay"],
+  "display_override": ["window-controls-overlay"],
   "display": "standalone",
-  "version": "2.1",
-  "version_name": "2 realese",
+  "version": "5.0",
+  "version_name": "5 realese",
   "categories": ["productivity", "utilities"],
   "description": "A simple and modern calculator PWA web app.",
   "start_url": "/index.html",

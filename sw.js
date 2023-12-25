@@ -1,5 +1,6 @@
 // Choose a cache name
-const cacheName = 'cache-v4';
+const cacheName = 'cache-v5';
+const version = 5;
 // List the files to precache
 const precacheResources = [
   '/',
@@ -38,6 +39,14 @@ addEventListener("install", (event) => {
 
 self.addEventListener('activate', (event) => {
   console.log('Service worker activate event!');
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.filter((cacheName) => cacheName !== cacheName)
+          .map((cacheName) => caches.delete(cacheName))
+      );
+    })
+  );
 });
 
 // When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network

@@ -5,6 +5,7 @@ navigator.serviceWorker && navigator.serviceWorker.register('./../sw.js').then(f
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
+const version = 5;
 
 function errorSetting() {
   counter++;
@@ -59,3 +60,21 @@ function evaluateDisplay() {
     }
   }
 }
+
+function checkForUpdates() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        const storedVersion = localStorage.getItem('sw-version');
+        if (storedVersion !== version) {
+          registration.update();
+          localStorage.setItem('sw-version', version);
+        }
+      })
+      .catch((error) => {
+        console.error('Error registering service worker:', error);
+      });
+  }
+}
+
+checkForUpdates();
