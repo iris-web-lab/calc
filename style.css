@@ -57,8 +57,9 @@
       touch-action: manipulation;
     }
 
-    .material-symbols-outlined {
-      font-size: 2.5rem !important;
+    .symbol{
+      fill: fff;
+      height: 2.5rem;
     }
 
     .button:hover {
