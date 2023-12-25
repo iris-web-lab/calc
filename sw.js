@@ -15,15 +15,6 @@ const precacheResources = [
   '/back.svg',
 ];
 
-// When the service worker is installing, open the cache and add the precache resources to it
-//self.addEventListener('install', (event) => {
-//  console.log('Service worker install event!');
-//  event.waitUntil(
-//    caches.then((cache) => {cache.addAll(precacheResources)})
-//  );
-//});
-
-
 addEventListener("install", (event) => {
   const preCache = async () => {
     const cache = await caches.open(cacheName);
@@ -73,17 +64,4 @@ event.respondWith(
       });
     })
   );
-
-  
-/*  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request);
-    }).catch((error) => {
-      console.log("It seems something went wrong.", error);
-
-    }),
-  ); */
 });
