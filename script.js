@@ -1,4 +1,4 @@
-navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=9').then(function (registration) {
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=10').then(function (registration) {
   console.log('Excellent, registered with scope: ', registration.scope);
 });
 

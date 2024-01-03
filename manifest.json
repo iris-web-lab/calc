@@ -3,7 +3,7 @@
   "short_name": "Calculator",
   "display_override": ["window-controls-overlay"],
   "display": "standalone",
-  "version": "10.0",
+  "version": "10.1",
   "version_name": "10 realese",
   "categories": ["productivity", "utilities"],
   "description": "A simple and modern calculator PWA web app.",
@@ -22,6 +22,11 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "screenshots": [
