@@ -1,7 +1,27 @@
-let display = document.getElementById("display");
-var errSetting = 0;
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll(".append");
+const buttonClear = document.getElementById("button-clear");
+const buttonEqual = document.getElementById("button-equal");
+let errSetting = 0;
 let counter = 0;
-const version = 11;
+const version = 13;
+
+buttons.forEach(item => {
+  let val = item.dataset.purpose;
+  console.log("Loading: " + val);
+  item.addEventListener('click', function(){
+    appendDisplay(val)
+  })
+})
+
+buttonClear.addEventListener('click', function(){
+  clearDisplay()
+})
+
+buttonEqual.addEventListener('click', function(){
+  evaluateDisplay(); 
+  errorSetting();
+})
 
 function errorSetting() {
   counter++;

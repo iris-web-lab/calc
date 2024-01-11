@@ -2,13 +2,10 @@
   "manifest_version": 3,
   "name": "Simple Calculator",
   "short_name": "Calculator",
-  "version": "11.0",
-  "version_name": "11 realese",
-  "categories": [
-    "productivity",
-    "utilities"
-  ],
-  "description": "A simple and modern calculator extension.",
+  "version": "13.0",
+  "version_name": "13 realese",
+  "categories": ["productivity", "utilities"],
+  "description": "A simple and modern calculator PWA web app.",
   "theme_color": "#004A77",
   "background_color": "#000",
   "action": {

@@ -8,8 +8,8 @@
     <meta name="theme-color" content="#004A77" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="/manifest.json?ver=11" />
-    <link rel="stylesheet" href="style.css?ver=11">
+    <link rel="manifest" href="/manifest.json?ver=13" />
+    <link rel="stylesheet" href="style.css?ver=13">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
       @font-face {
@@ -23,29 +23,29 @@
     <div class="container">
       <div class="display" id="display">0</div>
       <div class="buttons">
-        <div class="button clear" onclick="clearDisplay()">C</div>
-        <div class="button" onclick="appendDisplay('(')">(</div>
-        <div class="button" onclick="appendDisplay(')')">)</div>
-        <div class="button" onclick="appendDisplay('/')">÷</div>
-        <div class="button" onclick="appendDisplay('7')">7</div>
-        <div class="button" onclick="appendDisplay('8')">8</div>
-        <div class="button" onclick="appendDisplay('9')">9</div>
-        <div class="button" onclick="appendDisplay('*')">×</div>
-        <div class="button" onclick="appendDisplay('4')">4</div>
-        <div class="button" onclick="appendDisplay('5')">5</div>
-        <div class="button" onclick="appendDisplay('6')">6</div>
-        <div class="button" onclick="appendDisplay('-')">-</div>
-        <div class="button" onclick="appendDisplay('1')">1</div>
-        <div class="button" onclick="appendDisplay('2')">2</div>
-        <div class="button" onclick="appendDisplay('3')">3</div>
-        <div class="button" onclick="appendDisplay('+')">+</div>
-        <div class="button clear" onclick="appendDisplay('Del')">
-        <img class="symbol" src="back.svg"></div>
-        <div class="button zero" onclick="appendDisplay('0')">0</div>
-        <div class="button" onclick="appendDisplay('.')">.</div>
-        <div class="button equal" onclick="evaluateDisplay(); errorSetting()">=</div>
+        <div id="button-clear" class="button clear">C</div>
+        <div class="button append" data-purpose="(">(</div>
+        <div class="button append" data-purpose=")">)</div>
+        <div class="button append" data-purpose="/">÷</div>
+        <div class="button append" data-purpose="7">7</div>
+        <div class="button append" data-purpose="8">8</div>
+        <div class="button append" data-purpose="9">9</div>
+        <div class="button append" data-purpose="*">×</div>
+        <div class="button append" data-purpose="4">4</div>
+        <div class="button append" data-purpose="5">5</div>
+        <div class="button append" data-purpose="6">6</div>
+        <div class="button append" data-purpose="-">-</div>
+        <div class="button append" data-purpose="1">1</div>
+        <div class="button append" data-purpose="2">2</div>
+        <div class="button append" data-purpose="3">3</div>
+        <div class="button append" data-purpose="+">+</div>
+        <div class="button clear" data-purpose="Del">
+          <img class="symbol" src="back.svg"></div>
+        <div class="button zero append" data-purpose="0">0</div>
+        <div class="button append" data-purpose=".">.</div>
+        <div id="button-equal" class="button equal">=</div>
       </div>
     </div>
-    <script src="/script.js?ver=11"></script>
+    <script src="/script.js?ver=13"></script>
   </body>
 </html>
