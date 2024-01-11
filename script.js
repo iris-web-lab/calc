@@ -1,11 +1,11 @@
-navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=10').then(function (registration) {
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=11').then(function (registration) {
   console.log('Excellent, registered with scope: ', registration.scope);
 });
 
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
-const version = 10;
+const version = 11;
 
 function errorSetting() {
   counter++;
@@ -54,7 +54,7 @@ function checkForUpdates() {
   console.log("Checking for updates 1/2");
   if ('serviceWorker' in navigator) {
     console.log("Checking for updates 2/2");
-    navigator.serviceWorker.register('/sw.js?ver=9').then((registration) => {
+    navigator.serviceWorker.register('/sw.js?ver=11').then((registration) => {
         const storedVersion = localStorage.getItem('sw-version');
         if (storedVersion !== version) {
           console.log("Installing updates.");

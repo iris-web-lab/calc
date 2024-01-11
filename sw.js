@@ -1,6 +1,6 @@
 // Choose a cache name
-const cacheName = 'cache-v9';
-const version = 10;
+const cacheName = 'cache-v10';
+const version = 11;
 // List the files to precache
 const precacheResources = [
   '/',
