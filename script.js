@@ -1,7 +1,3 @@
-navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=11').then(function (registration) {
-  console.log('Excellent, registered with scope: ', registration.scope);
-});
-
 let display = document.getElementById("display");
 var errSetting = 0;
 let counter = 0;
@@ -15,10 +11,6 @@ function errorSetting() {
 }
 
 setInterval(counter = 0, 5000);
-
-Window.onload = function size() {
-  window.resizeTo(700, window.screen.availHeight / 2);
-}
 
 function appendDisplay(char) {
   if (char == "Del") {
@@ -49,25 +41,3 @@ function evaluateDisplay() {
     }
   }
 }
-
-function checkForUpdates() {
-  console.log("Checking for updates 1/2");
-  if ('serviceWorker' in navigator) {
-    console.log("Checking for updates 2/2");
-    navigator.serviceWorker.register('/sw.js?ver=11').then((registration) => {
-        const storedVersion = localStorage.getItem('sw-version');
-        if (storedVersion !== version) {
-          console.log("Installing updates.");
-          registration.update();
-          localStorage.setItem('sw-version', version);
-          console.log("Updates installed.");
-        } else {
-          console.log("No updates found.");
-        }
-      }).catch((error) => {
-        console.error('Error installing update, Error registering service worker:', error);
-      });
-  }
-}
-
-setTimeout(checkForUpdates, 2000);
