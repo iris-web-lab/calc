@@ -1,56 +1,24 @@
 {
+  "manifest_version": 3,
   "name": "Simple Calculator",
   "short_name": "Calculator",
-  "display_override": ["window-controls-overlay"],
-  "display": "standalone",
   "version": "11.0",
   "version_name": "11 realese",
-  "categories": ["productivity", "utilities"],
-  "description": "A simple and modern calculator PWA web app.",
-  "start_url": "/index.html?ver=10",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "description": "A simple and modern calculator extension.",
   "theme_color": "#004A77",
   "background_color": "#000",
-  "scope": "/",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512-maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+  "action": {
+    "default_popup": "index.html?ver=10",
+    "default_icon": "icon-192.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "calculator@lukadjo.t.me",
+      "strict_min_version": "109.0"
     }
-  ],
-  "screenshots": [
-    {
-     "src": "https://i.imgur.com/Xoa7T1U.jpg",
-      "sizes": "1080x2285",
-      "type": "image/jpeg",
-      "form_factor": "narrow",
-      "label": "Calculator"
-    },
-    {
-     "src": "https://i.imgur.com/hYrQrDL.jpg",
-      "sizes": "1080x2285",
-      "type": "image/jpeg",
-      "form_factor": "narrow",
-      "label": "Calculator"
-    },
-    {
-     "src": "https://i.imgur.com/x618czZ.jpg",
-      "sizes": "1080x2285",
-      "type": "image/jpeg",
-      "form_factor": "narrow",
-      "label": "Calculator"
-    }
-]
-
+  }  
 }
