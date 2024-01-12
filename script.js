@@ -9,17 +9,17 @@ const version = 13;
 buttons.forEach(item => {
   let val = item.dataset.purpose;
   console.log("Loading: " + val);
-  item.addEventListener('click', function(){
+  item.addEventListener('click', function () {
     appendDisplay(val)
   })
 })
 
-buttonClear.addEventListener('click', function(){
+buttonClear.addEventListener('click', function () {
   clearDisplay()
 })
 
-buttonEqual.addEventListener('click', function(){
-  evaluateDisplay(); 
+buttonEqual.addEventListener('click', function () {
+  evaluateDisplay();
   errorSetting();
 })
 
@@ -30,7 +30,14 @@ function errorSetting() {
   }
 }
 
-setInterval(counter = 0, 5000);
+function resetCounter() {
+  setTimeout(function () {
+    counter = 0;
+    resetCounter()
+  }, 5000);
+}
+
+resetCounter();
 
 function appendDisplay(char) {
   if (char == "Del") {
