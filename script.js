@@ -57,7 +57,6 @@ function clearDisplay() {
 
 function evaluateDisplay() {
   try {
-    //let result = eval(display.textContent);
     let result = new Function("return " + display.textContent);
     display.textContent = result();
   } catch (error) {
