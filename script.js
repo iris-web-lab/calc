@@ -59,8 +59,8 @@ function clearDisplay() {
 function evaluateDisplay() {
   try {
     //let result = eval(display.textContent);
-    let result = new Function("return " + display.textContent);
-    display.textContent = result();
+    //let result = new Function("return " + display.textContent);
+    display.textContent = math.evaluate(display.textContent);
   } catch (error) {
     if (errSetting == 0) {
       display.textContent = "Error";
