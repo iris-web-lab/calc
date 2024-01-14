@@ -1,4 +1,4 @@
-navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=13').then(function (registration) {
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=14').then(function (registration) {
   console.log('Excellent, registered with scope: ', registration.scope);
 });
 
@@ -8,7 +8,7 @@ const buttonClear = document.getElementById("button-clear");
 const buttonEqual = document.getElementById("button-equal");
 let errSetting = 0;
 let counter = 0;
-const version = 13;
+const version = 14;
 
 buttons.forEach(item => {
   let val = item.dataset.purpose;
@@ -59,8 +59,8 @@ function clearDisplay() {
 function evaluateDisplay() {
   try {
     //let result = eval(display.textContent);
-    let result = new Function("return " + display.textContent);
-    display.textContent = result();
+    //let result = new Function("return " + display.textContent);
+    display.textContent = math.evaluate(display.textContent);
   } catch (error) {
     if (errSetting == 0) {
       display.textContent = "Error";
