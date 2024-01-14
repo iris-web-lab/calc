@@ -1,6 +1,6 @@
 // Choose a cache name
-const cacheName = 'cache-v13';
-const version = 13;
+const cacheName = 'cache-v14';
+const version = 14;
 // List the files to precache
 const precacheResources = [
   '/',
@@ -13,6 +13,7 @@ const precacheResources = [
   '/icon-192.png',
   '/icon-512-maskable.png',
   '/back.svg',
+  'https://unpkg.com/mathjs@12.3.0/lib/browser/math.js',
 ];
 
 addEventListener("install", (event) => {
