@@ -28,7 +28,7 @@
       overflow-x: auto;
       /* white-space: nowrap; */
       display: inline-block;
-      line-height: 28vh
+      line-height: 28vh;
       line-height: 28dvh;
       text-align: right;
     }
