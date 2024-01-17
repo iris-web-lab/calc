@@ -1,5 +1,5 @@
 # Calc
 
-You shouldn't be here!
+A simple and modern calculator PWA with a browser extension port.
 
-Please go here [here](https://iris-web-lab.github.io/calc/app/)!
+A link to the deployment [link](https://calc-iris.web.app)!
