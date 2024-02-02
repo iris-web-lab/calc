@@ -1,6 +1,7 @@
 // Choose a cache name
-const cacheName = 'cache-v14';
-const version = 14;
+const version = 15;
+const cacheName = 'cache-v' + version;
+
 // List the files to precache
 const precacheResources = [
   '/',
@@ -27,41 +28,52 @@ addEventListener("install", (event) => {
   event.waitUntil(preCache());
 });
 
-
-
 self.addEventListener('activate', (event) => {
   console.log('Service worker activate event!');
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.filter((cacheName) => cacheName !== cacheName)
-          .map((cacheName) => caches.delete(cacheName))
+        cacheNames.filter((name) => name !== cacheName)
+          .map((name) => caches.delete(name))
       );
     })
   );
 });
 
-// When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
 self.addEventListener('fetch', (event) => {
-  if (event.request.url.startsWith('https://www.google-analytics.com')) {
+  // Ignore requests to Google Analytics and Google Tag Manager
+  if (event.request.url.includes('google-analytics.com') || event.request.url.includes('googletagmanager.com')) {
     return;
   }
-  if (event.request.url.startsWith('https://www.googletagmanager.com')) {
-    return;
-  }
+
   console.log('Fetch intercepted for:', event.request.url);
-  console.log(event.request);
 
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      // If the requested resource is in the cache, return it
+      if (cachedResponse) {
+        console.log('Cache hit:', event.request.url);
+        return cachedResponse;
+      }
 
-event.respondWith(
-    caches.open(cacheName).then(function(cache) {
-      return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request).then(function(response) {
+      // Otherwise, fetch the resource from the network
+      return fetch(event.request).then((networkResponse) => {
+        // Check if the response is valid
+        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+          console.log('Fetch failed:', event.request.url);
+          return networkResponse;
+        }
 
-          cache.put(event.request, response.clone());
-          return response;
+        // Clone the response to store in the cache and return the original response
+        const responseToCache = networkResponse.clone();
 
+        // Open a cache and store the fetched resource for future use
+        caches.open(cacheName).then((cache) => {
+          console.log('Cache miss - storing:', event.request.url);
+          cache.put(event.request, responseToCache);
         });
+
+        return networkResponse;
       });
     })
   );

@@ -1,5 +1,6 @@
-navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=14').then(function (registration) {
-  console.log('Excellent, registered with scope: ', registration.scope);
+const version = 15;
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=' + version).then(function (registration) {
+  console.log('Service worker registered with scope:', registration.scope);
 });
 
 const display = document.getElementById("display");
@@ -8,7 +9,6 @@ const buttonClear = document.getElementById("button-clear");
 const buttonEqual = document.getElementById("button-equal");
 let errSetting = 0;
 let counter = 0;
-const version = 14;
 
 buttons.forEach(item => {
   let val = item.dataset.purpose;
@@ -72,20 +72,31 @@ function evaluateDisplay() {
 
 function checkForUpdates() {
   console.log("Checking for updates 1/2");
+
   if ('serviceWorker' in navigator) {
     console.log("Checking for updates 2/2");
-    navigator.serviceWorker.register('/sw.js?ver=13').then((registration) => {
+
+    navigator.serviceWorker.register('/sw.js?ver=' + version).then((registration) => {
       const storedVersion = localStorage.getItem('sw-version');
+
       if (storedVersion !== version) {
         console.log("Installing updates.");
-        registration.update();
-        localStorage.setItem('sw-version', version);
-        console.log("Updates installed.");
+        
+        // Log the current and new version for debugging
+        console.log('Current version:', storedVersion);
+        console.log('New version:', version);
+
+        registration.update().then(() => {
+          localStorage.setItem('sw-version', version);
+          console.log("Updates installed.");
+        }).catch((updateError) => {
+          console.error('Error installing update:', updateError);
+        });
       } else {
         console.log("No updates found.");
       }
     }).catch((error) => {
-      console.error('Error installing update, Error registering service worker:', error);
+      console.error('Error registering service worker:', error);
     });
   }
 }
