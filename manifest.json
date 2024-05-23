@@ -11,6 +11,9 @@
     "default_popup": "index.html?ver=11",
     "default_icon": "icon-192.png"
   },
+  "permissions": [
+        "storage"
+  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "calculator@lukadjo.t.me",
