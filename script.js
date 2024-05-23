@@ -23,6 +23,27 @@ buttonEqual.addEventListener('click', function () {
   errorSetting();
 })
 
+restoreText();
+
+function restoreText() {
+    const text = localStorage.getItem("text-content");
+    display.textContent = text
+}
+
+window.onload = function(){
+let observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+        console.log(mutation.type); // <- It always detects changes
+        localStorage.setItem("text-content", display.textContent);
+    });    
+});
+
+let config = {characterData: true, subtree: true};
+observer.observe(display, config);
+//observer.disconnect();
+
+}
+
 function errorSetting() {
   counter++;
   if (counter == 5) {
