@@ -17,9 +17,4 @@
       "strict_min_version": "109.0"
     }
   },
-  "sandbox": {
-    "pages": [
-      "index.html"
-    ]
-  }
 }
