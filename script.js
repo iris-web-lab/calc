@@ -26,37 +26,22 @@ buttonEqual.addEventListener("click", function () {
 restoreText();
 
 function restoreText() {
-  const text = chrome.storage.local.get("text-content");
-  display.textContent = text;
+  console.log("Restoring text...");
+  chrome.storage.local.get(["textDisplay"]).then((result) => {
+    console.log("Value is ", result.textDisplay);
+    display.textContent = result.textDisplay;
+  });
 }
 
 function saveText() {
-  chrome.storage.local.set({"text-content": display.textContent});
+  console.log("Saving text:", display.textContent);
+
+  try {
+    chrome.storage.local.set({ textDisplay: display.textContent });
+  } catch (error) {
+    console.log("Error saving text:", error);
+  }
 }
-
-/* This does not work due to the type of content that is supposed to be monitored
-display.addEventListener("onchange", function () {
-  console.log(`Display changed to ${display.textContent}`);
-  localStorage.setItem("text-content", display.textContent);
-});
-*/
-
-/*  
-window.onload = function(){
-  console.log('Starting mutation observer...')
-let observer = new MutationObserver(function(mutations){
-    mutations.forEach(function(mutation){
-        console.log(mutation.type); // <- It always detects changes
-        localStorage.setItem("text-content", display.textContent);
-    });    
-});
-
-let config = {characterData: true, subtree: true};
-
-observer.observe(display, config);
-//observer.disconnect();
-}
-*/
 
 function errorSetting() {
   counter++;
@@ -84,12 +69,12 @@ function appendDisplay(char) {
       display.textContent += char;
     }
   }
-  saveText()
+  saveText();
 }
 
 function clearDisplay() {
   display.textContent = "0";
-  saveText()
+  saveText();
 }
 
 function evaluateDisplay() {
@@ -104,5 +89,5 @@ function evaluateDisplay() {
       display.textContent = error;
     }
   }
-  saveText()
+  saveText();
 }
