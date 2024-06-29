@@ -2,6 +2,7 @@ const display = document.getElementById("display");
 const buttons = document.querySelectorAll(".append");
 const buttonClear = document.getElementById("button-clear");
 const buttonEqual = document.getElementById("button-equal");
+let browser = (window.browser)? window.browser : window.chrome;
 let errSetting = 0;
 let counter = 0;
 const version = 14;
