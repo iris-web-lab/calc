@@ -26,12 +26,13 @@ buttonEqual.addEventListener("click", function () {
 restoreText();
 
 function restoreText() {
-  const text = Storage.local.get("text-content");
+  const text = chrome.storage.local.get("text-content");
+  browser.Storage
   display.textContent = text;
 }
 
 function saveText() {
-  Storage.local.set("text-content", display.textContent);
+  chrome.storage.local.set("text-content", display.textContent);
 }
 
 /* This does not work due to the type of content that is supposed to be monitored
