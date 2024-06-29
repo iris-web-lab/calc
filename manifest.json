@@ -3,12 +3,12 @@
   "name": "Simple Calculator",
   "short_name": "Calculator",
 
-  "version": "14.1",
-  "version_name": "14.1 realese",
+  "version": "15",
+  "version_name": "15 realese",
 
   "description": "A simple and modern calculator PWA web app.",
   "action": {
-    "default_popup": "index.html?ver=11",
+    "default_popup": "index.html?ver=15",
     "default_icon": "icon-192.png"
   },
   "permissions": [

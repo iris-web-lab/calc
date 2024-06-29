@@ -5,7 +5,7 @@ const buttonEqual = document.getElementById("button-equal");
 let browser = (window.browser)? window.browser : window.chrome;
 let errSetting = 0;
 let counter = 0;
-const version = 14;
+const version = 15;
 
 buttons.forEach((item) => {
   let val = item.dataset.purpose;
