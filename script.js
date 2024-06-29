@@ -27,7 +27,6 @@ restoreText();
 
 function restoreText() {
   const text = chrome.storage.local.get("text-content");
-  browser.Storage
   display.textContent = text;
 }
 
