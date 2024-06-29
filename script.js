@@ -32,7 +32,7 @@ function restoreText() {
 }
 
 function saveText() {
-  chrome.storage.local.set("text-content", display.textContent);
+  chrome.storage.local.set({"text-content": display.textContent});
 }
 
 /* This does not work due to the type of content that is supposed to be monitored
