@@ -6,31 +6,44 @@ let errSetting = 0;
 let counter = 0;
 const version = 14;
 
-buttons.forEach(item => {
+buttons.forEach((item) => {
   let val = item.dataset.purpose;
   console.log("Loading: " + val);
-  item.addEventListener('click', function () {
-    appendDisplay(val)
-  })
-})
+  item.addEventListener("click", function () {
+    appendDisplay(val);
+  });
+});
 
-buttonClear.addEventListener('click', function () {
-  clearDisplay()
-})
+buttonClear.addEventListener("click", function () {
+  clearDisplay();
+});
 
-buttonEqual.addEventListener('click', function () {
+buttonEqual.addEventListener("click", function () {
   evaluateDisplay();
   errorSetting();
-})
+});
 
 restoreText();
 
 function restoreText() {
-    const text = localStorage.getItem("text-content");
-    display.textContent = text
+  const text = Storage.local.get("text-content");
+  display.textContent = text;
 }
 
+function saveText() {
+  Storage.local.set("text-content", display.textContent);
+}
+
+/* This does not work due to the type of content that is supposed to be monitored
+display.addEventListener("onchange", function () {
+  console.log(`Display changed to ${display.textContent}`);
+  localStorage.setItem("text-content", display.textContent);
+});
+*/
+
+/*  
 window.onload = function(){
+  console.log('Starting mutation observer...')
 let observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
         console.log(mutation.type); // <- It always detects changes
@@ -39,10 +52,11 @@ let observer = new MutationObserver(function(mutations){
 });
 
 let config = {characterData: true, subtree: true};
+
 observer.observe(display, config);
 //observer.disconnect();
-
 }
+*/
 
 function errorSetting() {
   counter++;
@@ -54,7 +68,7 @@ function errorSetting() {
 function resetCounter() {
   setTimeout(function () {
     counter = 0;
-    resetCounter()
+    resetCounter();
   }, 5000);
 }
 
@@ -70,10 +84,12 @@ function appendDisplay(char) {
       display.textContent += char;
     }
   }
+  saveText()
 }
 
 function clearDisplay() {
   display.textContent = "0";
+  saveText()
 }
 
 function evaluateDisplay() {
@@ -88,4 +104,5 @@ function evaluateDisplay() {
       display.textContent = error;
     }
   }
+  saveText()
 }
