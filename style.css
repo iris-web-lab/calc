@@ -94,14 +94,14 @@
       .container {
         display: flex;
         flex-direction: row;
-        height: 100vh
+        height: 100vh;
         height: 100dvh;
         background-color: #121212;
         width: 100vw;
       }
       .display {
         overflow-wrap: break-word;
-        line-height: 20vh
+        line-height: 20vh;
         line-height: 20dvh;
       }
       .buttons {
