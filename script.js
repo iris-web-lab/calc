@@ -1,4 +1,4 @@
-const version = 15;
+const version = 16;
 navigator.serviceWorker && navigator.serviceWorker.register('/sw.js?ver=' + version).then(function (registration) {
   console.log('Service worker registered with scope:', registration.scope);
 });
@@ -101,7 +101,7 @@ Window.onload = function size() {
   window.resizeTo(700, window.screen.availHeight / 2);
 }
 
-function appendDisplay(char) {
+function appendDisplay(char)actions {
   if (char == "Del") {
     display.textContent = display.textContent.slice(0, -1);
   } else {
