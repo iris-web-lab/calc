@@ -24,6 +24,67 @@ buttonEqual.addEventListener("click", function () {
   errorSetting();
 });
 
+document.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  let val = null;
+  switch (event.key) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+      val = event.key;
+      break;
+    case "/":
+    case "*":
+    case "+":
+    case "-":
+    case "(":
+    case ")":
+    case ".":
+      val = event.key;
+      break;
+    case "Enter":
+      val = "=";
+      break;
+    case "=":
+      val = "=";
+      break;
+    case "Backspace":
+      val = "Del";
+      break;
+    case "Escape":
+      val = "C";
+      break;
+    case "C":
+      val = "C";
+      break;
+    case "c":
+      val = "C";
+      break;
+    default:
+      return; // Do not act on other keys
+  }
+
+  console.log("Keypress detected: " + val);
+  if (val === "C") {
+    clearDisplay();
+  } else if (val === "=") {
+    evaluateDisplay();
+  } else {
+    appendDisplay(val);
+  }
+  event.preventDefault();
+});
+
 restoreText();
 
 function restoreText() {
