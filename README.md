@@ -4,6 +4,8 @@ A simple and modern calculator PWA with a browser extension port.
 
 Here's a link [to the extensions page](https://addons.mozilla.org/en-US/firefox/addon/s-calculator/)!
 
+To contribute, make a pull request or if you dont want to/can't make an issue detailing the change/fix! Bringing a feature you want to attention is always useful, even if it isnt implemented.
+
 ---
 
 Copyright (C) 2024  Luka Đ.
