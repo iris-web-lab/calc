@@ -3,8 +3,8 @@
   "name": "Simple Calculator",
   "short_name": "Calculator",
 
-  "version": "15",
-  "version_name": "15 realese",
+  "version": "16",
+  "version_name": "16 realese",
 
   "description": "A simple and modern calculator PWA web app.",
   "action": {
