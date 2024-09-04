@@ -16,6 +16,7 @@
       background-color: #000000;
       min-width: 360px;
       min-height: 510px;
+      color: white;
     }
 
     .display {
@@ -25,7 +26,6 @@
       justify-content: flex-end;
       font-size: 4rem;
       padding: 0.5rem;
-      color: white;
       overflow-x: auto;
       /* white-space: nowrap; */
       display: inline-block;
@@ -41,6 +41,7 @@
       gap: 0.5rem;
       padding: 0.5rem;
       touch-action: manipulation;
+      color: white;
     }
 
     .button {
@@ -50,7 +51,7 @@
       font-size: 2rem;
       font-weight: bold;
       border-radius: 1.5rem;
-      color: white;
+
       background-color: #004A77;
       -webkit-user-select: none;
       /* Safari */
@@ -107,3 +108,22 @@
       }
     }
     
+    @media (prefers-color-scheme: light) {  
+      body {  
+         background: #f6f6f6; 
+         color: #000000;
+      }
+      .container {
+        background-color: #f6f6f6;
+        color: #000000;
+        border: #0a67a0 2px solid;
+        border-radius: 1.15rem;
+      }
+      .button {
+        background-color: #0a67a0;
+      }
+      .buttons {
+        border: #0a67a0 5px solid;
+        border-radius: 1rem;
+      }
+    }
