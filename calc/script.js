@@ -9,7 +9,7 @@ const version = 16;
 
 buttons.forEach((item) => {
   let val = item.dataset.purpose;
-  console.log("Loading: " + val);
+  // console.log("Loading: " + val);
   item.addEventListener("click", function () {
     appendDisplay(val);
   });
@@ -24,6 +24,7 @@ buttonEqual.addEventListener("click", function () {
   errorSetting();
 });
 
+// Handle key presses
 document.addEventListener("keydown", function(event) {
   if (event.defaultPrevented) {
     return; // Do nothing if the event was already processed
@@ -141,8 +142,6 @@ function clearDisplay() {
 
 function evaluateDisplay() {
   try {
-    //let result = eval(display.textContent);
-    //let result = new Function("return " + display.textContent);
     display.textContent = math.evaluate(display.textContent);
   } catch (error) {
     if (errSetting == 0) {
