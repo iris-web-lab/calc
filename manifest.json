@@ -1,7 +1,6 @@
 {
   "name": "Simple Calculator",
   "short_name": "Calculator",
-  "display_override": ["window-controls-overlay"],
   "display": "standalone",
   "version": "16.0",
   "version_name": "16 realese",
