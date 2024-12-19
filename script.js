@@ -101,7 +101,7 @@ Window.onload = function size() {
   window.resizeTo(700, window.screen.availHeight / 2);
 }
 
-function appendDisplay(char)actions {
+function appendDisplay(char) {
   if (char == "Del") {
     display.textContent = display.textContent.slice(0, -1);
   } else {
