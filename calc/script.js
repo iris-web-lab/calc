@@ -2,7 +2,7 @@ const display = document.getElementById("display");
 const buttons = document.querySelectorAll(".append");
 const buttonClear = document.getElementById("button-clear");
 const buttonEqual = document.getElementById("button-equal");
-let browser = (window.browser)? window.browser : window.chrome;
+let browser = window.browser ? window.browser : window.chrome;
 let errSetting = 0;
 let counter = 0;
 const version = 16;
@@ -25,7 +25,7 @@ buttonEqual.addEventListener("click", function () {
 });
 
 // Handle key presses
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   if (event.defaultPrevented) {
     return; // Do nothing if the event was already processed
   }
@@ -59,6 +59,9 @@ document.addEventListener("keydown", function(event) {
     case "=":
       val = "=";
       break;
+    case "@":
+      val = "+/-";
+      break;
     case "Backspace":
       val = "Del";
       break;
@@ -78,6 +81,12 @@ document.addEventListener("keydown", function(event) {
   console.log("Keypress detected: " + val);
   if (val === "C") {
     clearDisplay();
+  } else if (val == "@") {
+    if (display.textContent === "0") {
+      display.textContent = "^2";
+    } else {
+      display.textContent += "^2";
+    }
   } else if (val === "=") {
     evaluateDisplay();
   } else {
@@ -125,6 +134,11 @@ resetCounter();
 function appendDisplay(char) {
   if (char == "Del") {
     display.textContent = display.textContent.slice(0, -1);
+    if (display.textContent == "") {
+      display.textContent = "0";
+    }
+  } else if (char == "+/-") {
+    display.textContent = -display.textContent;
   } else {
     if (display.textContent === "0") {
       display.textContent = char;

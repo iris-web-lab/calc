@@ -3,21 +3,29 @@
   "name": "Simple Calculator",
   "short_name": "Calculator",
 
-  "version": "16.1",
-  "version_name": "16 realese",
+  "version": "17",
+  "version_name": "17 release",
 
-  "description": "A simple and modern calculator PWA web app.",
+  "description": "A simple and modern calculator add-on that remembers what you were just calculating.",
   "action": {
     "default_popup": "index.html?ver=15",
     "default_icon": "icon-192.png"
   },
-  "permissions": [
-        "storage"
-  ],
+  "permissions": ["storage"],
   "browser_specific_settings": {
     "gecko": {
       "id": "calculator@lukadjo.t.me",
       "strict_min_version": "109.0"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+C",
+        "linux": "Alt+Shift+C",
+        "windows": "Alt+Shift+C",
+        "mac": "Alt+Shift+C"
+      }
     }
   }
 }
